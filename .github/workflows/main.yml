@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Updated to version 3
 
     - name: Cache dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3  # Updated to version 3
       with:
         path: |
           ~/.nuget/packages
@@ -26,9 +26,9 @@ jobs:
           ${{ runner.os }}-dotnet-
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v2  # Updated to version 2
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '6.0.x'
 
     - name: Restore NuGet packages
       run: dotnet restore pbtgui.sln
