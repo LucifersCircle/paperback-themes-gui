@@ -13,14 +13,12 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-      with:
-        node-version: '20'
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        node-version: '20'
-        dotnet-version: '6.0.x'
+    - name: Setup .NET and MSBuild
+      run: |
+        choco install dotnet-sdk -y
+        choco install visualstudio2019buildtools -y
+        refreshenv
 
     - name: Build
       run: |
