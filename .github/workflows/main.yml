@@ -14,11 +14,22 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.nuget/packages
+          C:\Program Files\dotnet\sdk
+        key: ${{ runner.os }}-dotnet-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-dotnet-
+
     - name: Setup .NET and MSBuild
       run: |
         choco install dotnet-sdk -y
         choco install visualstudio2019buildtools -y
-        refreshenv
+
+        if ($env:ChocolateyInstall -ne $null) { . $env:ChocolateyInstall\helpers\chocolateyProfile.psm1 }
 
     - name: Build
       run: |
