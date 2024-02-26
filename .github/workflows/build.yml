@@ -11,7 +11,7 @@ env:
 
 defaults:
   run:
-    using: 'node20'
+    uses: 'node20'
 
 jobs:
   build:
