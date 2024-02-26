@@ -24,8 +24,11 @@ jobs:
       run: msbuild /t:publish /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishDir="bin\ClickOnce" pbtgui.sln
 
     - name: Copy Executable to Publish Directory
-      run: |
-        mkdir -p bin/ClickOnce
+      - name: Create ClickOnce Directory
+  run: |
+    if (!(Test-Path bin/ClickOnce)) {
+      mkdir bin/ClickOnce
+    }
         cp bin/Release/*.exe bin/ClickOnce
 
   manual-publish:
