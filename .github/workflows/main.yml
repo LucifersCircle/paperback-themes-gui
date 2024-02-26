@@ -20,7 +20,7 @@ jobs:
         path: |
           ~/.nuget/packages
           C:\Program Files\dotnet\sdk
-        key: ${{ runner.os }}-dotnet-${{ hashFiles('**/*.csproj') }}
+        key: ${{ runner.os }}-dotnet-${{ hashFiles('**/*.vbproj') }}
         restore-keys: |
           ${{ runner.os }}-dotnet-
 
@@ -29,6 +29,7 @@ jobs:
         choco install dotnet-sdk -y
         choco install visualstudio2019buildtools -y
 
+        # Manually refresh environment variables in PowerShell
         if ($env:ChocolateyInstall -ne $null) { . $env:ChocolateyInstall\helpers\chocolateyProfile.psm1 }
 
     - name: Build
