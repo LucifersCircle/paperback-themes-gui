@@ -14,14 +14,19 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3  # Updated to version 3
 
-    - name: Setup .NET and MSBuild
+    - name: Setup .NET
       uses: actions/setup-dotnet@v2  # Updated to version 2
       with:
         dotnet-version: '6.0.x'
-        msbuild-version: 'latest'
 
+    - name: Add MSBuild to PATH
+      run: |
+        echo "##[add-path]C:\Program Files\dotnet\"
+        echo "##[add-path]C:\Program Files\dotnet\sdk\{6.0.27}\MSBuild\Current\Bin"
+        
     - name: Check MSBuild Installation
       run: msbuild -version
+
 
   build:
     runs-on: windows-latest
