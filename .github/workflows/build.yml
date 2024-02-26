@@ -1,0 +1,26 @@
+name: Build WinForms App
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'  # Adjust version as needed
+
+      - name: Restore NuGet packages
+        run: dotnet restore pbtgui.sln
+
+      - name: Build
+        run: dotnet build pbtgui.sln --configuration Release
