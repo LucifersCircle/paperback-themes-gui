@@ -14,6 +14,12 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3  # Updated to version 3
 
+    - name: Setup .NET SDK and MSBuild
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+        include-msbuild: true  # Add this line to setup MSBuild
+
     - name: Check MSBuild Installation
       run: |
         msbuild -version
