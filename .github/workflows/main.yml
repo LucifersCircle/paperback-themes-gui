@@ -19,22 +19,19 @@ jobs:
       with:
         path: |
           ~/.nuget/packages
-          C:\Program Files\dotnet\sdk
+          ~/.dotnet/tools
+          ~/.local/share/NuGet
         key: ${{ runner.os }}-dotnet-${{ hashFiles('**/*.vbproj') }}
         restore-keys: |
           ${{ runner.os }}-dotnet-
 
-    - name: Setup .NET and MSBuild
-      run: |
-        choco install dotnet-sdk -y
-        choco install visualstudio2019buildtools -y
-
-        # Manually refresh environment variables in PowerShell
-        if ($env:ChocolateyInstall -ne $null) { . $env:ChocolateyInstall\helpers\chocolateyProfile.psm1 }
+    - name: Setup .NET and Build
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
 
     - name: Build
-      run: |
-        msbuild pbtgui.sln /p:Configuration=Release /p:Platform="Any CPU"
+      run: dotnet build pbtgui.sln --configuration Release
 
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
