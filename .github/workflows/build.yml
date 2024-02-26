@@ -32,6 +32,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: bin/ClickOnce/*.exe  # Set the path to your executable
+        asset_path: bin/ClickOnce/pbtgui.exe  # Set the correct path to your executable
         asset_name: pbtgui.exe  # Set the name for your executable
         asset_content_type: application/octet-stream
