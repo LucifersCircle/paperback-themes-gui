@@ -21,8 +21,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v1.0.0  # Set your desired tag name here
-        release_name: Release v1.0.0  # Set your desired release name here
+        tag_name: v1.0  # Set your desired tag name here
+        release_name: Release v1.0  # Set your desired release name here
         draft: false
         prerelease: false
 
