@@ -13,7 +13,14 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    # Other build steps here...
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Restore NuGet packages
+      run: nuget restore pbtgui.sln
+
+    - name: Build Solution
+      run: msbuild /t:build /p:Configuration=Release pbtgui.sln
 
     - name: Create Release
       id: create_release
@@ -32,6 +39,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: bin/ClickOnce/pbtgui.exe  # Set the correct path to your executable
+        asset_path: bin/Release/pbtgui.exe  # Set the correct path to your executable
         asset_name: pbtgui.exe  # Set the name for your executable
         asset_content_type: application/octet-stream
