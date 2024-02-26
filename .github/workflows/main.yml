@@ -14,16 +14,14 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3  # Updated to version 3
 
-    - name: Setup .NET SDK and MSBuild
-      uses: actions/setup-dotnet@v1
+    - name: Setup .NET and MSBuild
+      uses: actions/setup-dotnet@v2  # Updated to version 2
       with:
         dotnet-version: '6.0.x'
-        include-msbuild: true  # Add this line to setup MSBuild
+        msbuild-version: 'latest'
 
     - name: Check MSBuild Installation
-      run: |
-        msbuild -version
-        echo $env:PATH
+      run: msbuild -version
 
   build:
     runs-on: windows-latest
