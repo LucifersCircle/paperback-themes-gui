@@ -6,11 +6,16 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  CI: true
+
+defaults:
+  run:
+    using: 'node20'
+
 jobs:
   build:
-    runs-on: windows-2022
-    runs:
-      using: 'node20'
+    runs-on: windows-latest
 
     steps:
       - name: Checkout Repository
