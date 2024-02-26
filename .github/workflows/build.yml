@@ -1,4 +1,4 @@
-name: Publish ClickOnce Application
+name: Build and Publish
 
 on:
   push:
@@ -23,23 +23,11 @@ jobs:
     - name: Build ClickOnce Application
       run: msbuild /t:publish /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishDir="bin\ClickOnce" pbtgui.sln
 
-    - name: Copy Executable to Publish Directory
-      run: |
-        cp bin/Release/*.exe bin/ClickOnce
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: bin/ClickOnce/*.exe
+        asset_name: Your-Executable-Name.exe
+        asset_content_type: application/octet-stream
 
-  manual-publish:
-    runs-on: windows-2022
-    needs: build
-    if: github.event_name == 'workflow_dispatch'
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-
-    - name: Publish ClickOnce Application
-      run: msbuild /t:publish /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishDir="bin\ClickOnce" pbtgui.sln
-
-    - name: Copy Executable to Publish Directory
-      run: |
-        mkdir -p bin/ClickOnce
-        cp bin/Release/*.exe bin/ClickOnce
