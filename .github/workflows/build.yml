@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: windows-2022
+    runs:
+      using: 'node20'
 
     steps:
       - name: Checkout Repository
