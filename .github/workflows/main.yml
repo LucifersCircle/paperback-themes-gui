@@ -7,6 +7,18 @@ on:
   workflow_dispatch:
 
 jobs:
+  check-msbuild:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3  # Updated to version 3
+
+    - name: Check MSBuild Installation
+      run: |
+        msbuild -version
+        echo $env:PATH
+
   build:
     runs-on: windows-latest
 
