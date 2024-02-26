@@ -1,4 +1,4 @@
-name: Build and Publish
+name: Publish ClickOnce Application
 
 on:
   push:
@@ -14,31 +14,32 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: |
-          ~/.nuget/packages
-          ~/.local/share/NuGet
-        key: ${{ runner.os }}-dotnet-${{ hashFiles('**/*.vbproj') }}
-        restore-keys: |
-          ${{ runner.os }}-dotnet-
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
 
-    - name: Setup .NET
-      run: |
-        dotnet tool install --global MSBuild.Extension.Pack
-        dotnet msbuild /restore pbtgui.sln
+    - name: Restore NuGet packages
+      run: nuget restore pbtgui.sln
 
-    - name: Build
-      run: |
-        dotnet msbuild /t:build /p:Configuration=Release /p:Platform="Any CPU" pbtgui.sln
+    - name: Build ClickOnce Application
+      run: msbuild /t:publish /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishDir="bin\ClickOnce" pbtgui.sln
 
-    - name: Create ClickOnce Directory
+    - name: Copy Executable to Publish Directory
       run: |
-        if (!(Test-Path bin/ClickOnce)) {
-          New-Item -ItemType Directory -Path bin/ClickOnce
-        }
+        cp bin/Release/*.exe bin/ClickOnce
+
+  manual-publish:
+    runs-on: windows-2022
+    needs: build
+    if: github.event_name == 'workflow_dispatch'
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
     - name: Publish ClickOnce Application
+      run: msbuild /t:publish /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishDir="bin\ClickOnce" pbtgui.sln
+
+    - name: Copy Executable to Publish Directory
       run: |
-        dotnet msbuild /t:publish /p:Configuration=Release /p:Platform="Any CPU" pbtgui.sln
+        mkdir -p bin/ClickOnce
+        cp bin/Release/*.exe bin/ClickOnce
