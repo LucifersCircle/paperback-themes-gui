@@ -1,10 +1,9 @@
-name: Build and Publish
+name: Create Release and Upload Asset
 
 on:
   push:
     branches:
       - master
-  workflow_dispatch:
 
 jobs:
   build:
@@ -14,20 +13,25 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.2
+    # Other build steps here...
 
-    - name: Restore NuGet packages
-      run: nuget restore pbtgui.sln
-
-    - name: Build ClickOnce Application
-      run: msbuild /t:publish /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:PublishDir="bin\ClickOnce" pbtgui.sln
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v1.0.0  # Set your desired tag name here
+        release_name: Release v1.0.0  # Set your desired release name here
+        draft: false
+        prerelease: false
 
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ github.event.release.upload_url }}
-        asset_path: bin/ClickOnce/*.exe
-        asset_name: pbtgui.exe
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: bin/ClickOnce/*.exe  # Set the path to your executable
+        asset_name: pbtgui.exe  # Set the name for your executable
         asset_content_type: application/octet-stream
-
