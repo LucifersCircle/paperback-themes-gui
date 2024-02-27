@@ -1,44 +1,53 @@
-name: Create Release and Upload Asset
-
+name: Build
 on:
-  push:
-    branches:
-      - master
-
+  workflow_dispatch:
+    inputs:
+      version_number:
+        description: 'Version Number'     
+        required: true
+        type: string
+      info:
+        description: 'Description of this Release'
+        required: true
+        type: string
 jobs:
   build:
     runs-on: windows-2022
-
     steps:
-    - name: Checkout Repository
+    - name: Checkout repository
       uses: actions/checkout@v3
-
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
-
     - name: Restore NuGet packages
       run: nuget restore pbtgui.sln
-
-    - name: Build Solution
+    - name: Build executable
       run: msbuild /t:build /p:Configuration=Release pbtgui.sln
-
+    - name: Upload executable
+      uses: actions/upload-artifact@v3
+      with:
+        name: pbtgui
+        path: bin/Release/pbtgui-${{ github.event.inputs.version_number }}.exe
+        if-no-files-found: error
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    needs: build
+    - name: Download Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: bin/Release/pbtgui-${{ github.event.inputs.version_number }}.exe
+          path: bin/Release
+    - name: Show Artifacts
+      run: ls -R
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/create-release@v1.14.0
       with:
-        tag_name: v1.0  # Set your desired tag name here
-        release_name: Release v1.0  # Set your desired release name here
-        draft: false
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.event.inputs.version_number }}
+        name: Version ${{ github.event.inputs.version_number }}
+        draft: true
         prerelease: false
-
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: bin/Release/pbtgui.exe  # Set the correct path to your executable
-        asset_name: pbtgui.exe  # Set the name for your executable
-        asset_content_type: application/octet-stream
+        artifacts: "*.exe"
+        body: |
+          ${{ github.event.inputs.info }}
