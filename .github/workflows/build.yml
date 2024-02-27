@@ -1,4 +1,4 @@
-name: Create build and release
+name: Build
 on:
   workflow_dispatch:
     inputs:
@@ -35,10 +35,10 @@ jobs:
     needs: build
     steps:
       - name: Download Artifact
-          uses: actions/download-artifact@v3.0.0
-          with:
-            name: bin/Release/pbtgui-${{ github.event.inputs.version_number }}.exe
-            path: bin/Release
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: bin/Release/pbtgui-${{ github.event.inputs.version_number }}.exe
+          path: bin/Release
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1.14.0
