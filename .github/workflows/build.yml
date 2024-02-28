@@ -35,10 +35,7 @@ jobs:
     needs: build
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v3.0.0
-        with:
-          name: bin/Release/pbtgui.exe
-          path: bin/Release
+        uses: actions/checkout@v2
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
