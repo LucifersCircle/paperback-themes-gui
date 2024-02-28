@@ -10,9 +10,11 @@ on:
         description: 'Description of this Release'
         required: true
         type: string
+      tags:
+        - '*'
 jobs:
   build:
-    name: Create build
+    name: Build artifact
     runs-on: windows-2022
     steps:
     - name: Checkout repository
@@ -24,11 +26,14 @@ jobs:
     - name: Build executable
       run: msbuild /t:build /p:Configuration=Release pbtgui.sln
     - name: Upload executable
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-release-asset@v1
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: pbtgui
-        path: bin/Release/pbtgui.exe
-        if-no-files-found: error
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: bin/Release/pbtgui.exe
+        asset_name: pbtgui
+        asset_content_type: application/gzip
   release:
     name: Create Release
     runs-on: ubuntu-latest
@@ -46,7 +51,7 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.inputs.version_number }}
-          release_name: Version ${{ github.event.inputs.version_number }}
+          release_name: Release ${{ github.event.inputs.version_number }}
           draft: false
           prerelease: false
           body: |
