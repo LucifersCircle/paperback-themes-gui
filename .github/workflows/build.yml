@@ -11,10 +11,10 @@ on:
         required: true
         type: string
     tags:
-    - '*'
+    - 'v*'
 jobs:
   build:
-    name: Build artifact
+    name: Create build
     runs-on: windows-2022
     steps:
     - name: Checkout repository
@@ -26,14 +26,11 @@ jobs:
     - name: Build executable
       run: msbuild /t:build /p:Configuration=Release pbtgui.sln
     - name: Upload executable
-      uses: actions/upload-release-asset@v1
-      env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/upload-artifact@v4
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: bin/Release/pbtgui.exe
-        asset_name: pbtgui
-        asset_content_type: application/gzip
+        name: pbtgui
+        path: bin/Release/pbtgui.exe
+        if-no-files-found: error
   release:
     name: Create Release
     runs-on: ubuntu-latest
@@ -51,8 +48,18 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.inputs.version_number }}
-          release_name: Release ${{ github.event.inputs.version_number }}
+          release_name: V ${{ github.event.inputs.version_number }}
           draft: false
           prerelease: false
           body: |
             ${{ github.event.inputs.info }}
+        
+        - name: Upload executable
+          uses: actions/upload-release-asset@v1
+          env:
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }}
+            asset_path: bin/Release/pbtgui.exe
+            asset_name: pbtgui
+            asset_content_type: application/gzip
