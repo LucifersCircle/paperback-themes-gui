@@ -25,11 +25,13 @@ jobs:
       run: nuget restore pbtgui.sln
     - name: Build executable
       run: msbuild /t:build /p:Configuration=Release pbtgui.sln
-    - name: Upload executable
+    - name: Zip files
+      run: zip -r /bin/Release/paperback-themes-gui.zip /bin/Release/pbtgui.exe /bin/Release/Newtonsoft.Json.dll
+    - name: Create zip artifact
       uses: actions/upload-artifact@v4
       with:
-        name: pbtgui
-        path: bin/Release/pbtgui.exe
+        name: paperback-themes-gui
+        path: bin/Release/paperback-themes-gui.zip
         if-no-files-found: error
   release:
     name: Create Release
@@ -39,7 +41,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: pbtgui
+          name: paperback-themes-gui
           path: bin/Release
       - name: Create Release
         id: create_release
@@ -60,6 +62,6 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: bin/Release/pbtgui.exe
-          asset_name: pbtgui.exe
-          asset_content_type: application/exe
+          asset_path: bin/Release/paperback-themes-gui.zip
+          asset_name: paperback-themes-gui.zip
+          asset_content_type: application/zip
