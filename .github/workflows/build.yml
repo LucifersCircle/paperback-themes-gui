@@ -54,12 +54,12 @@ jobs:
           body: |
             ${{ github.event.inputs.info }}
         
-        - name: Upload executable
-          uses: actions/upload-release-asset@v1
-          env:
-             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: bin/Release/pbtgui.exe
-            asset_name: pbtgui
-            asset_content_type: application/gzip
+      - name: Upload executable
+        uses: actions/upload-release-asset@v1
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: bin/Release/pbtgui.exe
+          asset_name: pbtgui
+          asset_content_type: application/gzip
