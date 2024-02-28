@@ -10,8 +10,8 @@ on:
         description: 'Description of this Release'
         required: true
         type: string
-      tags:
-      - '*'
+    tags:
+    - '*'
 jobs:
   build:
     name: Build artifact
