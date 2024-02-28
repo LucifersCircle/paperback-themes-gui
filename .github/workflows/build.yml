@@ -28,6 +28,7 @@ jobs:
     - name: Create zip file
       run: |
         Compress-Archive -Path "bin/Release/pbtgui.exe", "bin/Release/Newtonsoft.Json.dll" -DestinationPath "bin/Release/paperback-themes-gui.zip"
+    - name: Create artifact
       uses: actions/upload-artifact@v4
       with:
         name: paperback-themes-gui
