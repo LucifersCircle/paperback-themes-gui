@@ -61,5 +61,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: bin/Release/pbtgui.exe
-          asset_name: pbtgui
+          asset_name: pbtgui.exe
           asset_content_type: application/exe
