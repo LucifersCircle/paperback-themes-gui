@@ -10,8 +10,8 @@ Paperback Themes GUI is a graphical user interface to help you visualize your Pa
 Created with inspiration from [Paperback Themes](https://github.com/Celarye/paperback-themes) and guidance from [Celarye](https://github.com/Celarye).
 
 ## Images
-![Default Theme](./images/defaulttheme.png)
-![Custom Theme](./images/customtheme.png)
+![Default Theme](.github/assets/defaulttheme.png)
+![Custom Theme](.github/assets/customtheme.png)
 
 ## Features
  - Open SRGB/RGBA/HEXA theme files
