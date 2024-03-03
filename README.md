@@ -59,3 +59,7 @@ git clone https://github.com/LucifersCircle/paperback-themes-gui.git
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt).
+
+[Newtonsoft.Json]: <https://github.com/JamesNK/Newtonsoft.Json>
+[Visual Studio (2022)]: <https://visualstudio.microsoft.com/downloads/>
+[.NET Framework 4.7.2]: <https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472>
