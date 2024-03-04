@@ -1,5 +1,7 @@
 ﻿Imports Newtonsoft.Json.Linq
 Imports System.IO
+Imports System.Net
+
 
 Public Class Form1
 
@@ -123,6 +125,8 @@ Public Class Form1
 
         ' Create the main RGB JSON object
         Dim jsonObject As New JObject()
+        jsonObject("description") = txtThemeDescription.Text
+        jsonObject("source") = txtThemeSource.Text
         jsonObject("creator") = txtThemeCreator.Text
 
         ' Add sub-nests for accentColor
@@ -325,6 +329,8 @@ Public Class Form1
 
         ' Create the sRGB JSON object
         Dim sRGBJsonObject As New JObject()
+        sRGBJsonObject("description") = txtThemeDescription.Text
+        sRGBJsonObject("source") = txtThemeSource.Text
         sRGBJsonObject("creator") = txtThemeCreator.Text
 
         ' Add sub-nests for accentColor
@@ -526,6 +532,8 @@ Public Class Form1
 
         ' Create a new JObject for Hex codes
         Dim hexJsonObject As New JObject()
+        hexJsonObject("description") = txtThemeDescription.Text
+        hexJsonObject("source") = txtThemeSource.Text
         hexJsonObject("creator") = txtThemeCreator.Text
 
         ' Add sub-nests for accentColor
@@ -741,6 +749,18 @@ Public Class Form1
         If txtThemeName.Text = "Theme Name" OrElse String.IsNullOrEmpty(txtThemeName.Text.Trim()) Then
             ' Set default value for Theme Name if necessary
             txtThemeName.Text = "AwesomePaperbackTheme"
+        End If
+
+        ' Check if the Theme Description text box contains default text or is empty
+        If txtThemeDescription.Text = "Description" OrElse String.IsNullOrEmpty(txtThemeDescription.Text.Trim()) Then
+            ' Set default value for Theme Name if necessary
+            txtThemeDescription.Text = "Generated theme with PBT_GUI."
+        End If
+
+        ' Check if the Theme Source text box contains default text or is empty
+        If txtThemeSource.Text = "Source" OrElse String.IsNullOrEmpty(txtThemeSource.Text.Trim()) Then
+            ' Set default value for Theme Name if necessary
+            txtThemeSource.Text = "None"
         End If
 
         ' Save the color data
@@ -1040,6 +1060,24 @@ Public Class Form1
 
 
                 ' Set the tex box values
+                If jsonObject.ContainsKey("description") AndAlso jsonObject("description") IsNot Nothing Then
+
+                    txtThemeDescription.Text = jsonObject("description").ToString()
+
+                Else
+                    ' Provide a default value
+                    txtThemeDescription.Text = "Description"
+                End If
+
+                If jsonObject.ContainsKey("source") AndAlso jsonObject("source") IsNot Nothing Then
+
+                    txtThemeSource.Text = jsonObject("source").ToString()
+
+                Else
+                    ' Provide a default value
+                    txtThemeSource.Text = "Source"
+                End If
+
                 If jsonObject.ContainsKey("creator") AndAlso jsonObject("creator") IsNot Nothing Then
 
                     txtThemeCreator.Text = jsonObject("creator").ToString()
@@ -1643,6 +1681,59 @@ Public Class Form1
         ' Dark Button Text
         pbxDarkButtonText.BackColor = colorButton20
 
+        ' Update check
+        ' GitHub repository owner and name
+        Dim owner As String = "LucifersCircle"
+        Dim repoName As String = "paperback-themes-gui"
+
+        ' GitHub API URL to fetch tags
+        Dim apiUrl As String = $"https://api.github.com/repos/{owner}/{repoName}/tags"
+
+        Try
+            ' Create a WebClient to make a request to GitHub API
+            Dim client As New WebClient()
+            ' GitHub requires a User-Agent header in the request
+            client.Headers.Add("User-Agent", "request")
+
+            ' Download the content of the GitHub API response
+            Dim jsonResponse As String = client.DownloadString(apiUrl)
+
+            ' Parse the JSON response
+            Dim tagsArray As JArray = JArray.Parse(jsonResponse)
+
+            ' Get the latest version tag
+            Dim latestVersion As Version = Nothing
+            For Each tag As JObject In tagsArray
+                Dim tagName As String = tag("name").ToString()
+                Dim version As New Version(tagName)
+                If latestVersion Is Nothing OrElse version > latestVersion Then
+                    latestVersion = version
+                End If
+            Next
+
+            If latestVersion IsNot Nothing Then
+                ' Compare the latest version with a certain threshold
+                Dim thresholdVersion As Version = New Version("1.1") ' Update this to current version before building
+
+                If latestVersion > thresholdVersion Then
+                    Dim result As DialogResult = MessageBox.Show("New version available! Would you like to go to GitHub to download it?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                    If result = DialogResult.Yes Then
+                        ' Open GitHub repository URL in default web browser
+                        Process.Start($"https://github.com/{owner}/{repoName}/releases")
+                        Me.Close()
+                    End If
+                Else
+
+                End If
+            Else
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error accessing the GitHub repository tags: " & ex.Message, "Update Check Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+
     End Sub
 
     Private Sub UpdatePictureBoxAlpha(pictureBox As PictureBox, color As Color, numericUpDown As NumericUpDown)
@@ -1660,5 +1751,28 @@ Public Class Form1
         pictureBox.BackColor = Color.FromArgb(CInt(alpha * 255), currentColor.R, currentColor.G, currentColor.B)
 
     End Sub
+
+    Private Sub txtThemeSource_GotFocus(sender As Object, e As EventArgs) Handles txtThemeSource.GotFocus
+
+        ' Check if the text box contains the default text "Source"
+        If txtThemeSource.Text = "Source" Then
+
+            txtThemeSource.Text = ""
+
+        End If
+
+    End Sub
+
+    Private Sub txtThemeDescription_GotFocus(sender As Object, e As EventArgs) Handles txtThemeDescription.GotFocus
+
+        ' Check if the text box contains the default text "Theme Name"
+        If txtThemeDescription.Text = "Description" Then
+
+            txtThemeDescription.Text = ""
+
+        End If
+
+    End Sub
+
 
 End Class

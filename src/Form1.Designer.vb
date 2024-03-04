@@ -112,10 +112,12 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtThemeDescription = New System.Windows.Forms.TextBox()
+        Me.txtThemeSource = New System.Windows.Forms.TextBox()
         Me.chkRGBA = New System.Windows.Forms.CheckBox()
         Me.chkHEXA = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         CType(Me.nudLightAccentAlpha, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudLightAccentTextAlpha, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudLightForegroundAlpha, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,13 +159,14 @@ Partial Class Form1
         CType(Me.pbxDarkSubtitleText, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxDarkBodyText, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblLightAccent
         '
         Me.lblLightAccent.AutoSize = True
         Me.lblLightAccent.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightAccent.Location = New System.Drawing.Point(12, 108)
+        Me.lblLightAccent.Location = New System.Drawing.Point(12, 139)
         Me.lblLightAccent.Name = "lblLightAccent"
         Me.lblLightAccent.Size = New System.Drawing.Size(44, 13)
         Me.lblLightAccent.TabIndex = 3
@@ -173,7 +176,7 @@ Partial Class Form1
         '
         'btnLightAccent
         '
-        Me.btnLightAccent.Location = New System.Drawing.Point(59, 196)
+        Me.btnLightAccent.Location = New System.Drawing.Point(59, 227)
         Me.btnLightAccent.Name = "btnLightAccent"
         Me.btnLightAccent.Size = New System.Drawing.Size(22, 22)
         Me.btnLightAccent.TabIndex = 7
@@ -182,7 +185,7 @@ Partial Class Form1
         '
         'btnLightAccentText
         '
-        Me.btnLightAccentText.Location = New System.Drawing.Point(140, 196)
+        Me.btnLightAccentText.Location = New System.Drawing.Point(140, 227)
         Me.btnLightAccentText.Name = "btnLightAccentText"
         Me.btnLightAccentText.Size = New System.Drawing.Size(22, 22)
         Me.btnLightAccentText.TabIndex = 9
@@ -191,7 +194,7 @@ Partial Class Form1
         '
         'btnDarkAccent
         '
-        Me.btnDarkAccent.Location = New System.Drawing.Point(59, 357)
+        Me.btnDarkAccent.Location = New System.Drawing.Point(59, 388)
         Me.btnDarkAccent.Name = "btnDarkAccent"
         Me.btnDarkAccent.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkAccent.TabIndex = 27
@@ -200,7 +203,7 @@ Partial Class Form1
         '
         'btnDarkAccentText
         '
-        Me.btnDarkAccentText.Location = New System.Drawing.Point(140, 357)
+        Me.btnDarkAccentText.Location = New System.Drawing.Point(140, 388)
         Me.btnDarkAccentText.Name = "btnDarkAccentText"
         Me.btnDarkAccentText.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkAccentText.TabIndex = 29
@@ -211,7 +214,7 @@ Partial Class Form1
         '
         Me.lblLightAccentText.AutoSize = True
         Me.lblLightAccentText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightAccentText.Location = New System.Drawing.Point(93, 108)
+        Me.lblLightAccentText.Location = New System.Drawing.Point(93, 139)
         Me.lblLightAccentText.Name = "lblLightAccentText"
         Me.lblLightAccentText.Size = New System.Drawing.Size(65, 13)
         Me.lblLightAccentText.TabIndex = 8
@@ -224,7 +227,7 @@ Partial Class Form1
         '
         Me.lblDarkAccent.AutoSize = True
         Me.lblDarkAccent.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkAccent.Location = New System.Drawing.Point(12, 269)
+        Me.lblDarkAccent.Location = New System.Drawing.Point(12, 300)
         Me.lblDarkAccent.Name = "lblDarkAccent"
         Me.lblDarkAccent.Size = New System.Drawing.Size(41, 13)
         Me.lblDarkAccent.TabIndex = 9
@@ -236,7 +239,7 @@ Partial Class Form1
         '
         Me.lblDarkAccentText.AutoSize = True
         Me.lblDarkAccentText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkAccentText.Location = New System.Drawing.Point(93, 269)
+        Me.lblDarkAccentText.Location = New System.Drawing.Point(93, 300)
         Me.lblDarkAccentText.Name = "lblDarkAccentText"
         Me.lblDarkAccentText.Size = New System.Drawing.Size(65, 13)
         Me.lblDarkAccentText.TabIndex = 10
@@ -247,7 +250,7 @@ Partial Class Form1
         '
         'btnDarkForeground
         '
-        Me.btnDarkForeground.Location = New System.Drawing.Point(223, 357)
+        Me.btnDarkForeground.Location = New System.Drawing.Point(223, 388)
         Me.btnDarkForeground.Name = "btnDarkForeground"
         Me.btnDarkForeground.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkForeground.TabIndex = 31
@@ -256,7 +259,7 @@ Partial Class Form1
         '
         'btnLightForeground
         '
-        Me.btnLightForeground.Location = New System.Drawing.Point(223, 196)
+        Me.btnLightForeground.Location = New System.Drawing.Point(223, 227)
         Me.btnLightForeground.Name = "btnLightForeground"
         Me.btnLightForeground.Size = New System.Drawing.Size(22, 22)
         Me.btnLightForeground.TabIndex = 11
@@ -267,7 +270,7 @@ Partial Class Form1
         '
         Me.lblDarkForeground.AutoSize = True
         Me.lblDarkForeground.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkForeground.Location = New System.Drawing.Point(176, 269)
+        Me.lblDarkForeground.Location = New System.Drawing.Point(176, 300)
         Me.lblDarkForeground.Name = "lblDarkForeground"
         Me.lblDarkForeground.Size = New System.Drawing.Size(61, 13)
         Me.lblDarkForeground.TabIndex = 13
@@ -279,7 +282,7 @@ Partial Class Form1
         '
         Me.lblLightForeground.AutoSize = True
         Me.lblLightForeground.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightForeground.Location = New System.Drawing.Point(176, 108)
+        Me.lblLightForeground.Location = New System.Drawing.Point(176, 139)
         Me.lblLightForeground.Name = "lblLightForeground"
         Me.lblLightForeground.Size = New System.Drawing.Size(61, 13)
         Me.lblLightForeground.TabIndex = 14
@@ -291,7 +294,7 @@ Partial Class Form1
         '
         Me.lblLightBackground.AutoSize = True
         Me.lblLightBackground.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightBackground.Location = New System.Drawing.Point(258, 108)
+        Me.lblLightBackground.Location = New System.Drawing.Point(258, 139)
         Me.lblLightBackground.Name = "lblLightBackground"
         Me.lblLightBackground.Size = New System.Drawing.Size(65, 13)
         Me.lblLightBackground.TabIndex = 15
@@ -302,7 +305,7 @@ Partial Class Form1
         '
         Me.lblDarkBackground.AutoSize = True
         Me.lblDarkBackground.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkBackground.Location = New System.Drawing.Point(258, 269)
+        Me.lblDarkBackground.Location = New System.Drawing.Point(258, 300)
         Me.lblDarkBackground.Name = "lblDarkBackground"
         Me.lblDarkBackground.Size = New System.Drawing.Size(65, 13)
         Me.lblDarkBackground.TabIndex = 16
@@ -311,7 +314,7 @@ Partial Class Form1
         '
         'btnLightBackground
         '
-        Me.btnLightBackground.Location = New System.Drawing.Point(305, 196)
+        Me.btnLightBackground.Location = New System.Drawing.Point(305, 227)
         Me.btnLightBackground.Name = "btnLightBackground"
         Me.btnLightBackground.Size = New System.Drawing.Size(22, 22)
         Me.btnLightBackground.TabIndex = 13
@@ -320,7 +323,7 @@ Partial Class Form1
         '
         'btnDarkBackground
         '
-        Me.btnDarkBackground.Location = New System.Drawing.Point(305, 357)
+        Me.btnDarkBackground.Location = New System.Drawing.Point(305, 388)
         Me.btnDarkBackground.Name = "btnDarkBackground"
         Me.btnDarkBackground.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkBackground.TabIndex = 33
@@ -329,7 +332,7 @@ Partial Class Form1
         '
         'btnLightOverlay
         '
-        Me.btnLightOverlay.Location = New System.Drawing.Point(387, 196)
+        Me.btnLightOverlay.Location = New System.Drawing.Point(387, 227)
         Me.btnLightOverlay.Name = "btnLightOverlay"
         Me.btnLightOverlay.Size = New System.Drawing.Size(22, 22)
         Me.btnLightOverlay.TabIndex = 15
@@ -338,7 +341,7 @@ Partial Class Form1
         '
         'btnDarkOverlay
         '
-        Me.btnDarkOverlay.Location = New System.Drawing.Point(387, 357)
+        Me.btnDarkOverlay.Location = New System.Drawing.Point(387, 388)
         Me.btnDarkOverlay.Name = "btnDarkOverlay"
         Me.btnDarkOverlay.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkOverlay.TabIndex = 35
@@ -347,7 +350,7 @@ Partial Class Form1
         '
         'btnLightSeparator
         '
-        Me.btnLightSeparator.Location = New System.Drawing.Point(470, 196)
+        Me.btnLightSeparator.Location = New System.Drawing.Point(470, 227)
         Me.btnLightSeparator.Name = "btnLightSeparator"
         Me.btnLightSeparator.Size = New System.Drawing.Size(22, 22)
         Me.btnLightSeparator.TabIndex = 17
@@ -356,7 +359,7 @@ Partial Class Form1
         '
         'btnDarkSeparator
         '
-        Me.btnDarkSeparator.Location = New System.Drawing.Point(470, 357)
+        Me.btnDarkSeparator.Location = New System.Drawing.Point(470, 388)
         Me.btnDarkSeparator.Name = "btnDarkSeparator"
         Me.btnDarkSeparator.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkSeparator.TabIndex = 37
@@ -365,7 +368,7 @@ Partial Class Form1
         '
         'btnLightBodyText
         '
-        Me.btnLightBodyText.Location = New System.Drawing.Point(553, 196)
+        Me.btnLightBodyText.Location = New System.Drawing.Point(553, 227)
         Me.btnLightBodyText.Name = "btnLightBodyText"
         Me.btnLightBodyText.Size = New System.Drawing.Size(22, 22)
         Me.btnLightBodyText.TabIndex = 19
@@ -374,7 +377,7 @@ Partial Class Form1
         '
         'btnLightSubtitleText
         '
-        Me.btnLightSubtitleText.Location = New System.Drawing.Point(636, 196)
+        Me.btnLightSubtitleText.Location = New System.Drawing.Point(636, 227)
         Me.btnLightSubtitleText.Name = "btnLightSubtitleText"
         Me.btnLightSubtitleText.Size = New System.Drawing.Size(22, 22)
         Me.btnLightSubtitleText.TabIndex = 21
@@ -383,7 +386,7 @@ Partial Class Form1
         '
         'btnLightButtonBackground
         '
-        Me.btnLightButtonBackground.Location = New System.Drawing.Point(718, 196)
+        Me.btnLightButtonBackground.Location = New System.Drawing.Point(718, 227)
         Me.btnLightButtonBackground.Name = "btnLightButtonBackground"
         Me.btnLightButtonBackground.Size = New System.Drawing.Size(22, 22)
         Me.btnLightButtonBackground.TabIndex = 23
@@ -392,7 +395,7 @@ Partial Class Form1
         '
         'btnLightButtonText
         '
-        Me.btnLightButtonText.Location = New System.Drawing.Point(799, 196)
+        Me.btnLightButtonText.Location = New System.Drawing.Point(799, 227)
         Me.btnLightButtonText.Name = "btnLightButtonText"
         Me.btnLightButtonText.Size = New System.Drawing.Size(22, 22)
         Me.btnLightButtonText.TabIndex = 25
@@ -401,7 +404,7 @@ Partial Class Form1
         '
         'btnDarkBodyText
         '
-        Me.btnDarkBodyText.Location = New System.Drawing.Point(553, 357)
+        Me.btnDarkBodyText.Location = New System.Drawing.Point(553, 388)
         Me.btnDarkBodyText.Name = "btnDarkBodyText"
         Me.btnDarkBodyText.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkBodyText.TabIndex = 39
@@ -410,7 +413,7 @@ Partial Class Form1
         '
         'btnDarkSubtitleText
         '
-        Me.btnDarkSubtitleText.Location = New System.Drawing.Point(636, 357)
+        Me.btnDarkSubtitleText.Location = New System.Drawing.Point(636, 388)
         Me.btnDarkSubtitleText.Name = "btnDarkSubtitleText"
         Me.btnDarkSubtitleText.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkSubtitleText.TabIndex = 41
@@ -419,7 +422,7 @@ Partial Class Form1
         '
         'btnDarkButtonBackground
         '
-        Me.btnDarkButtonBackground.Location = New System.Drawing.Point(718, 357)
+        Me.btnDarkButtonBackground.Location = New System.Drawing.Point(718, 388)
         Me.btnDarkButtonBackground.Name = "btnDarkButtonBackground"
         Me.btnDarkButtonBackground.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkButtonBackground.TabIndex = 43
@@ -428,7 +431,7 @@ Partial Class Form1
         '
         'btnDarkButtonText
         '
-        Me.btnDarkButtonText.Location = New System.Drawing.Point(799, 357)
+        Me.btnDarkButtonText.Location = New System.Drawing.Point(799, 388)
         Me.btnDarkButtonText.Name = "btnDarkButtonText"
         Me.btnDarkButtonText.Size = New System.Drawing.Size(22, 22)
         Me.btnDarkButtonText.TabIndex = 45
@@ -439,7 +442,7 @@ Partial Class Form1
         '
         Me.lblLightOverlay.AutoSize = True
         Me.lblLightOverlay.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightOverlay.Location = New System.Drawing.Point(340, 108)
+        Me.lblLightOverlay.Location = New System.Drawing.Point(340, 139)
         Me.lblLightOverlay.Name = "lblLightOverlay"
         Me.lblLightOverlay.Size = New System.Drawing.Size(43, 13)
         Me.lblLightOverlay.TabIndex = 31
@@ -452,7 +455,7 @@ Partial Class Form1
         '
         Me.lblDarkOverlay.AutoSize = True
         Me.lblDarkOverlay.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkOverlay.Location = New System.Drawing.Point(340, 269)
+        Me.lblDarkOverlay.Location = New System.Drawing.Point(340, 300)
         Me.lblDarkOverlay.Name = "lblDarkOverlay"
         Me.lblDarkOverlay.Size = New System.Drawing.Size(43, 13)
         Me.lblDarkOverlay.TabIndex = 32
@@ -465,7 +468,7 @@ Partial Class Form1
         '
         Me.lblLightSeparator.AutoSize = True
         Me.lblLightSeparator.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightSeparator.Location = New System.Drawing.Point(423, 108)
+        Me.lblLightSeparator.Location = New System.Drawing.Point(423, 139)
         Me.lblLightSeparator.Name = "lblLightSeparator"
         Me.lblLightSeparator.Size = New System.Drawing.Size(53, 13)
         Me.lblLightSeparator.TabIndex = 33
@@ -477,7 +480,7 @@ Partial Class Form1
         '
         Me.lblDarkSeparator.AutoSize = True
         Me.lblDarkSeparator.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkSeparator.Location = New System.Drawing.Point(423, 269)
+        Me.lblDarkSeparator.Location = New System.Drawing.Point(423, 300)
         Me.lblDarkSeparator.Name = "lblDarkSeparator"
         Me.lblDarkSeparator.Size = New System.Drawing.Size(53, 13)
         Me.lblDarkSeparator.TabIndex = 34
@@ -489,7 +492,7 @@ Partial Class Form1
         '
         Me.lblLightBodyText.AutoSize = True
         Me.lblLightBodyText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightBodyText.Location = New System.Drawing.Point(506, 108)
+        Me.lblLightBodyText.Location = New System.Drawing.Point(506, 139)
         Me.lblLightBodyText.Name = "lblLightBodyText"
         Me.lblLightBodyText.Size = New System.Drawing.Size(55, 13)
         Me.lblLightBodyText.TabIndex = 35
@@ -500,7 +503,7 @@ Partial Class Form1
         '
         Me.lblDarkBodyText.AutoSize = True
         Me.lblDarkBodyText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkBodyText.Location = New System.Drawing.Point(506, 269)
+        Me.lblDarkBodyText.Location = New System.Drawing.Point(506, 300)
         Me.lblDarkBodyText.Name = "lblDarkBodyText"
         Me.lblDarkBodyText.Size = New System.Drawing.Size(55, 13)
         Me.lblDarkBodyText.TabIndex = 36
@@ -511,7 +514,7 @@ Partial Class Form1
         '
         Me.lblLightSubtitleText.AutoSize = True
         Me.lblLightSubtitleText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightSubtitleText.Location = New System.Drawing.Point(589, 108)
+        Me.lblLightSubtitleText.Location = New System.Drawing.Point(589, 139)
         Me.lblLightSubtitleText.Name = "lblLightSubtitleText"
         Me.lblLightSubtitleText.Size = New System.Drawing.Size(66, 13)
         Me.lblLightSubtitleText.TabIndex = 37
@@ -522,7 +525,7 @@ Partial Class Form1
         '
         Me.lblDarkSubtitleText.AutoSize = True
         Me.lblDarkSubtitleText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkSubtitleText.Location = New System.Drawing.Point(589, 269)
+        Me.lblDarkSubtitleText.Location = New System.Drawing.Point(589, 300)
         Me.lblDarkSubtitleText.Name = "lblDarkSubtitleText"
         Me.lblDarkSubtitleText.Size = New System.Drawing.Size(66, 13)
         Me.lblDarkSubtitleText.TabIndex = 38
@@ -533,7 +536,7 @@ Partial Class Form1
         '
         Me.lblLightButtonBackground.AutoSize = True
         Me.lblLightButtonBackground.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightButtonBackground.Location = New System.Drawing.Point(671, 108)
+        Me.lblLightButtonBackground.Location = New System.Drawing.Point(671, 139)
         Me.lblLightButtonBackground.Name = "lblLightButtonBackground"
         Me.lblLightButtonBackground.Size = New System.Drawing.Size(56, 13)
         Me.lblLightButtonBackground.TabIndex = 39
@@ -545,7 +548,7 @@ Partial Class Form1
         '
         Me.lblDarkButtonBackground.AutoSize = True
         Me.lblDarkButtonBackground.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkButtonBackground.Location = New System.Drawing.Point(671, 269)
+        Me.lblDarkButtonBackground.Location = New System.Drawing.Point(671, 300)
         Me.lblDarkButtonBackground.Name = "lblDarkButtonBackground"
         Me.lblDarkButtonBackground.Size = New System.Drawing.Size(56, 13)
         Me.lblDarkButtonBackground.TabIndex = 40
@@ -557,7 +560,7 @@ Partial Class Form1
         '
         Me.lblLightButtonText.AutoSize = True
         Me.lblLightButtonText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblLightButtonText.Location = New System.Drawing.Point(752, 108)
+        Me.lblLightButtonText.Location = New System.Drawing.Point(752, 139)
         Me.lblLightButtonText.Name = "lblLightButtonText"
         Me.lblLightButtonText.Size = New System.Drawing.Size(62, 13)
         Me.lblLightButtonText.TabIndex = 41
@@ -570,7 +573,7 @@ Partial Class Form1
         '
         Me.lblDarkButtonText.AutoSize = True
         Me.lblDarkButtonText.Cursor = System.Windows.Forms.Cursors.Help
-        Me.lblDarkButtonText.Location = New System.Drawing.Point(752, 269)
+        Me.lblDarkButtonText.Location = New System.Drawing.Point(752, 300)
         Me.lblDarkButtonText.Name = "lblDarkButtonText"
         Me.lblDarkButtonText.Size = New System.Drawing.Size(62, 13)
         Me.lblDarkButtonText.TabIndex = 42
@@ -587,7 +590,7 @@ Partial Class Form1
         '
         'btnWriteJson
         '
-        Me.btnWriteJson.Location = New System.Drawing.Point(480, 24)
+        Me.btnWriteJson.Location = New System.Drawing.Point(11, 52)
         Me.btnWriteJson.Name = "btnWriteJson"
         Me.btnWriteJson.Size = New System.Drawing.Size(75, 23)
         Me.btnWriteJson.TabIndex = 46
@@ -614,18 +617,20 @@ Partial Class Form1
         Me.txtThemeName.Tag = ""
         Me.txtThemeName.Text = "Theme Name"
         Me.txtThemeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.txtThemeName, "Name for your theme. This will also be the themes file name.")
         Me.txtThemeName.WordWrap = False
         '
         'txtThemeCreator
         '
         Me.txtThemeCreator.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.txtThemeCreator.Location = New System.Drawing.Point(286, 24)
+        Me.txtThemeCreator.Location = New System.Drawing.Point(92, 52)
         Me.txtThemeCreator.MaxLength = 50
         Me.txtThemeCreator.Name = "txtThemeCreator"
         Me.txtThemeCreator.Size = New System.Drawing.Size(188, 22)
         Me.txtThemeCreator.TabIndex = 3
         Me.txtThemeCreator.Text = "Theme Creator"
         Me.txtThemeCreator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.txtThemeCreator, "Username you want to be added to the theme.")
         Me.txtThemeCreator.WordWrap = False
         '
         'nudLightAccentAlpha
@@ -633,7 +638,7 @@ Partial Class Form1
         Me.nudLightAccentAlpha.DecimalPlaces = 1
         Me.nudLightAccentAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightAccentAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightAccentAlpha.Location = New System.Drawing.Point(15, 196)
+        Me.nudLightAccentAlpha.Location = New System.Drawing.Point(15, 227)
         Me.nudLightAccentAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightAccentAlpha.Name = "nudLightAccentAlpha"
         Me.nudLightAccentAlpha.ReadOnly = True
@@ -647,7 +652,7 @@ Partial Class Form1
         Me.nudLightAccentTextAlpha.DecimalPlaces = 1
         Me.nudLightAccentTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightAccentTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightAccentTextAlpha.Location = New System.Drawing.Point(96, 196)
+        Me.nudLightAccentTextAlpha.Location = New System.Drawing.Point(96, 227)
         Me.nudLightAccentTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightAccentTextAlpha.Name = "nudLightAccentTextAlpha"
         Me.nudLightAccentTextAlpha.ReadOnly = True
@@ -661,7 +666,7 @@ Partial Class Form1
         Me.nudLightForegroundAlpha.DecimalPlaces = 1
         Me.nudLightForegroundAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightForegroundAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightForegroundAlpha.Location = New System.Drawing.Point(179, 196)
+        Me.nudLightForegroundAlpha.Location = New System.Drawing.Point(179, 227)
         Me.nudLightForegroundAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightForegroundAlpha.Name = "nudLightForegroundAlpha"
         Me.nudLightForegroundAlpha.ReadOnly = True
@@ -675,7 +680,7 @@ Partial Class Form1
         Me.nudLightBackgroundAlpha.DecimalPlaces = 1
         Me.nudLightBackgroundAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightBackgroundAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightBackgroundAlpha.Location = New System.Drawing.Point(261, 196)
+        Me.nudLightBackgroundAlpha.Location = New System.Drawing.Point(261, 227)
         Me.nudLightBackgroundAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightBackgroundAlpha.Name = "nudLightBackgroundAlpha"
         Me.nudLightBackgroundAlpha.ReadOnly = True
@@ -689,7 +694,7 @@ Partial Class Form1
         Me.nudLightOverlayAlpha.DecimalPlaces = 1
         Me.nudLightOverlayAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightOverlayAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightOverlayAlpha.Location = New System.Drawing.Point(343, 196)
+        Me.nudLightOverlayAlpha.Location = New System.Drawing.Point(343, 227)
         Me.nudLightOverlayAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightOverlayAlpha.Name = "nudLightOverlayAlpha"
         Me.nudLightOverlayAlpha.ReadOnly = True
@@ -703,7 +708,7 @@ Partial Class Form1
         Me.nudLightSeparatorAlpha.DecimalPlaces = 1
         Me.nudLightSeparatorAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightSeparatorAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightSeparatorAlpha.Location = New System.Drawing.Point(426, 196)
+        Me.nudLightSeparatorAlpha.Location = New System.Drawing.Point(426, 227)
         Me.nudLightSeparatorAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightSeparatorAlpha.Name = "nudLightSeparatorAlpha"
         Me.nudLightSeparatorAlpha.ReadOnly = True
@@ -717,7 +722,7 @@ Partial Class Form1
         Me.nudLightBodyTextAlpha.DecimalPlaces = 1
         Me.nudLightBodyTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightBodyTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightBodyTextAlpha.Location = New System.Drawing.Point(509, 196)
+        Me.nudLightBodyTextAlpha.Location = New System.Drawing.Point(509, 227)
         Me.nudLightBodyTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightBodyTextAlpha.Name = "nudLightBodyTextAlpha"
         Me.nudLightBodyTextAlpha.ReadOnly = True
@@ -731,7 +736,7 @@ Partial Class Form1
         Me.nudLightSubtitleTextAlpha.DecimalPlaces = 1
         Me.nudLightSubtitleTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightSubtitleTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightSubtitleTextAlpha.Location = New System.Drawing.Point(592, 196)
+        Me.nudLightSubtitleTextAlpha.Location = New System.Drawing.Point(592, 227)
         Me.nudLightSubtitleTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightSubtitleTextAlpha.Name = "nudLightSubtitleTextAlpha"
         Me.nudLightSubtitleTextAlpha.ReadOnly = True
@@ -745,7 +750,7 @@ Partial Class Form1
         Me.nudLightButtonBackgroundAlpha.DecimalPlaces = 1
         Me.nudLightButtonBackgroundAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightButtonBackgroundAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightButtonBackgroundAlpha.Location = New System.Drawing.Point(674, 196)
+        Me.nudLightButtonBackgroundAlpha.Location = New System.Drawing.Point(674, 227)
         Me.nudLightButtonBackgroundAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightButtonBackgroundAlpha.Name = "nudLightButtonBackgroundAlpha"
         Me.nudLightButtonBackgroundAlpha.ReadOnly = True
@@ -759,7 +764,7 @@ Partial Class Form1
         Me.nudLightButtonTextAlpha.DecimalPlaces = 1
         Me.nudLightButtonTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudLightButtonTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudLightButtonTextAlpha.Location = New System.Drawing.Point(755, 196)
+        Me.nudLightButtonTextAlpha.Location = New System.Drawing.Point(755, 227)
         Me.nudLightButtonTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudLightButtonTextAlpha.Name = "nudLightButtonTextAlpha"
         Me.nudLightButtonTextAlpha.ReadOnly = True
@@ -773,7 +778,7 @@ Partial Class Form1
         Me.nudDarkAccentAlpha.DecimalPlaces = 1
         Me.nudDarkAccentAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkAccentAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkAccentAlpha.Location = New System.Drawing.Point(15, 357)
+        Me.nudDarkAccentAlpha.Location = New System.Drawing.Point(15, 388)
         Me.nudDarkAccentAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkAccentAlpha.Name = "nudDarkAccentAlpha"
         Me.nudDarkAccentAlpha.ReadOnly = True
@@ -787,7 +792,7 @@ Partial Class Form1
         Me.nudDarkAccentTextAlpha.DecimalPlaces = 1
         Me.nudDarkAccentTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkAccentTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkAccentTextAlpha.Location = New System.Drawing.Point(96, 357)
+        Me.nudDarkAccentTextAlpha.Location = New System.Drawing.Point(96, 388)
         Me.nudDarkAccentTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkAccentTextAlpha.Name = "nudDarkAccentTextAlpha"
         Me.nudDarkAccentTextAlpha.ReadOnly = True
@@ -801,7 +806,7 @@ Partial Class Form1
         Me.nudDarkForegroundAlpha.DecimalPlaces = 1
         Me.nudDarkForegroundAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkForegroundAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkForegroundAlpha.Location = New System.Drawing.Point(179, 357)
+        Me.nudDarkForegroundAlpha.Location = New System.Drawing.Point(179, 388)
         Me.nudDarkForegroundAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkForegroundAlpha.Name = "nudDarkForegroundAlpha"
         Me.nudDarkForegroundAlpha.ReadOnly = True
@@ -815,7 +820,7 @@ Partial Class Form1
         Me.nudDarkBackgroundAlpha.DecimalPlaces = 1
         Me.nudDarkBackgroundAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkBackgroundAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkBackgroundAlpha.Location = New System.Drawing.Point(261, 357)
+        Me.nudDarkBackgroundAlpha.Location = New System.Drawing.Point(261, 388)
         Me.nudDarkBackgroundAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkBackgroundAlpha.Name = "nudDarkBackgroundAlpha"
         Me.nudDarkBackgroundAlpha.ReadOnly = True
@@ -829,7 +834,7 @@ Partial Class Form1
         Me.nudDarkOverlayAlpha.DecimalPlaces = 1
         Me.nudDarkOverlayAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkOverlayAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkOverlayAlpha.Location = New System.Drawing.Point(343, 357)
+        Me.nudDarkOverlayAlpha.Location = New System.Drawing.Point(343, 388)
         Me.nudDarkOverlayAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkOverlayAlpha.Name = "nudDarkOverlayAlpha"
         Me.nudDarkOverlayAlpha.ReadOnly = True
@@ -843,7 +848,7 @@ Partial Class Form1
         Me.nudDarkSeparatorAlpha.DecimalPlaces = 1
         Me.nudDarkSeparatorAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkSeparatorAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkSeparatorAlpha.Location = New System.Drawing.Point(426, 357)
+        Me.nudDarkSeparatorAlpha.Location = New System.Drawing.Point(426, 388)
         Me.nudDarkSeparatorAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkSeparatorAlpha.Name = "nudDarkSeparatorAlpha"
         Me.nudDarkSeparatorAlpha.ReadOnly = True
@@ -857,7 +862,7 @@ Partial Class Form1
         Me.nudDarkBodyTextAlpha.DecimalPlaces = 1
         Me.nudDarkBodyTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkBodyTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkBodyTextAlpha.Location = New System.Drawing.Point(509, 357)
+        Me.nudDarkBodyTextAlpha.Location = New System.Drawing.Point(509, 388)
         Me.nudDarkBodyTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkBodyTextAlpha.Name = "nudDarkBodyTextAlpha"
         Me.nudDarkBodyTextAlpha.ReadOnly = True
@@ -871,7 +876,7 @@ Partial Class Form1
         Me.nudDarkSubtitleTextAlpha.DecimalPlaces = 1
         Me.nudDarkSubtitleTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkSubtitleTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkSubtitleTextAlpha.Location = New System.Drawing.Point(592, 357)
+        Me.nudDarkSubtitleTextAlpha.Location = New System.Drawing.Point(592, 388)
         Me.nudDarkSubtitleTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkSubtitleTextAlpha.Name = "nudDarkSubtitleTextAlpha"
         Me.nudDarkSubtitleTextAlpha.ReadOnly = True
@@ -885,7 +890,7 @@ Partial Class Form1
         Me.nudDarkButtonBackgroundAlpha.DecimalPlaces = 1
         Me.nudDarkButtonBackgroundAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkButtonBackgroundAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkButtonBackgroundAlpha.Location = New System.Drawing.Point(674, 357)
+        Me.nudDarkButtonBackgroundAlpha.Location = New System.Drawing.Point(674, 388)
         Me.nudDarkButtonBackgroundAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkButtonBackgroundAlpha.Name = "nudDarkButtonBackgroundAlpha"
         Me.nudDarkButtonBackgroundAlpha.ReadOnly = True
@@ -899,7 +904,7 @@ Partial Class Form1
         Me.nudDarkButtonTextAlpha.DecimalPlaces = 1
         Me.nudDarkButtonTextAlpha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudDarkButtonTextAlpha.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nudDarkButtonTextAlpha.Location = New System.Drawing.Point(755, 357)
+        Me.nudDarkButtonTextAlpha.Location = New System.Drawing.Point(755, 388)
         Me.nudDarkButtonTextAlpha.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudDarkButtonTextAlpha.Name = "nudDarkButtonTextAlpha"
         Me.nudDarkButtonTextAlpha.ReadOnly = True
@@ -913,7 +918,7 @@ Partial Class Form1
         Me.pbxlightAccent.BackColor = System.Drawing.Color.DimGray
         Me.pbxlightAccent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxlightAccent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxlightAccent.Location = New System.Drawing.Point(15, 124)
+        Me.pbxlightAccent.Location = New System.Drawing.Point(15, 155)
         Me.pbxlightAccent.Name = "pbxlightAccent"
         Me.pbxlightAccent.Size = New System.Drawing.Size(66, 66)
         Me.pbxlightAccent.TabIndex = 67
@@ -924,7 +929,7 @@ Partial Class Form1
         Me.pbxLightAccentText.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightAccentText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightAccentText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightAccentText.Location = New System.Drawing.Point(96, 124)
+        Me.pbxLightAccentText.Location = New System.Drawing.Point(96, 155)
         Me.pbxLightAccentText.Name = "pbxLightAccentText"
         Me.pbxLightAccentText.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightAccentText.TabIndex = 69
@@ -935,7 +940,7 @@ Partial Class Form1
         Me.pbxDarkAccent.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkAccent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkAccent.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkAccent.Location = New System.Drawing.Point(15, 285)
+        Me.pbxDarkAccent.Location = New System.Drawing.Point(15, 316)
         Me.pbxDarkAccent.Name = "pbxDarkAccent"
         Me.pbxDarkAccent.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkAccent.TabIndex = 71
@@ -946,7 +951,7 @@ Partial Class Form1
         Me.pbxDarkAccentText.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkAccentText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkAccentText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkAccentText.Location = New System.Drawing.Point(96, 285)
+        Me.pbxDarkAccentText.Location = New System.Drawing.Point(96, 316)
         Me.pbxDarkAccentText.Name = "pbxDarkAccentText"
         Me.pbxDarkAccentText.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkAccentText.TabIndex = 72
@@ -957,7 +962,7 @@ Partial Class Form1
         Me.pbxLightForeground.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightForeground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightForeground.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightForeground.Location = New System.Drawing.Point(179, 124)
+        Me.pbxLightForeground.Location = New System.Drawing.Point(179, 155)
         Me.pbxLightForeground.Name = "pbxLightForeground"
         Me.pbxLightForeground.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightForeground.TabIndex = 75
@@ -968,7 +973,7 @@ Partial Class Form1
         Me.pbxDarkForeground.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkForeground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkForeground.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkForeground.Location = New System.Drawing.Point(179, 285)
+        Me.pbxDarkForeground.Location = New System.Drawing.Point(179, 316)
         Me.pbxDarkForeground.Name = "pbxDarkForeground"
         Me.pbxDarkForeground.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkForeground.TabIndex = 76
@@ -979,7 +984,7 @@ Partial Class Form1
         Me.pbxLightBackground.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightBackground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightBackground.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightBackground.Location = New System.Drawing.Point(261, 124)
+        Me.pbxLightBackground.Location = New System.Drawing.Point(261, 155)
         Me.pbxLightBackground.Name = "pbxLightBackground"
         Me.pbxLightBackground.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightBackground.TabIndex = 79
@@ -990,7 +995,7 @@ Partial Class Form1
         Me.pbxDarkBackground.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkBackground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkBackground.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkBackground.Location = New System.Drawing.Point(261, 285)
+        Me.pbxDarkBackground.Location = New System.Drawing.Point(261, 316)
         Me.pbxDarkBackground.Name = "pbxDarkBackground"
         Me.pbxDarkBackground.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkBackground.TabIndex = 80
@@ -1001,7 +1006,7 @@ Partial Class Form1
         Me.pbxLightOverlay.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightOverlay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightOverlay.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightOverlay.Location = New System.Drawing.Point(343, 124)
+        Me.pbxLightOverlay.Location = New System.Drawing.Point(343, 155)
         Me.pbxLightOverlay.Name = "pbxLightOverlay"
         Me.pbxLightOverlay.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightOverlay.TabIndex = 81
@@ -1012,7 +1017,7 @@ Partial Class Form1
         Me.pbxDarkOverlay.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkOverlay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkOverlay.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkOverlay.Location = New System.Drawing.Point(343, 285)
+        Me.pbxDarkOverlay.Location = New System.Drawing.Point(343, 316)
         Me.pbxDarkOverlay.Name = "pbxDarkOverlay"
         Me.pbxDarkOverlay.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkOverlay.TabIndex = 82
@@ -1023,7 +1028,7 @@ Partial Class Form1
         Me.pbxLightSeparator.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightSeparator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightSeparator.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightSeparator.Location = New System.Drawing.Point(426, 124)
+        Me.pbxLightSeparator.Location = New System.Drawing.Point(426, 155)
         Me.pbxLightSeparator.Name = "pbxLightSeparator"
         Me.pbxLightSeparator.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightSeparator.TabIndex = 83
@@ -1034,7 +1039,7 @@ Partial Class Form1
         Me.pbxDarkSeparator.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkSeparator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkSeparator.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkSeparator.Location = New System.Drawing.Point(426, 285)
+        Me.pbxDarkSeparator.Location = New System.Drawing.Point(426, 316)
         Me.pbxDarkSeparator.Name = "pbxDarkSeparator"
         Me.pbxDarkSeparator.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkSeparator.TabIndex = 84
@@ -1045,7 +1050,7 @@ Partial Class Form1
         Me.pbxLightBodyText.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightBodyText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightBodyText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightBodyText.Location = New System.Drawing.Point(509, 124)
+        Me.pbxLightBodyText.Location = New System.Drawing.Point(509, 155)
         Me.pbxLightBodyText.Name = "pbxLightBodyText"
         Me.pbxLightBodyText.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightBodyText.TabIndex = 85
@@ -1056,7 +1061,7 @@ Partial Class Form1
         Me.pbxLightSubtitleText.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightSubtitleText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightSubtitleText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightSubtitleText.Location = New System.Drawing.Point(592, 124)
+        Me.pbxLightSubtitleText.Location = New System.Drawing.Point(592, 155)
         Me.pbxLightSubtitleText.Name = "pbxLightSubtitleText"
         Me.pbxLightSubtitleText.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightSubtitleText.TabIndex = 86
@@ -1067,7 +1072,7 @@ Partial Class Form1
         Me.pbxLightButtonBackground.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightButtonBackground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightButtonBackground.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightButtonBackground.Location = New System.Drawing.Point(674, 124)
+        Me.pbxLightButtonBackground.Location = New System.Drawing.Point(674, 155)
         Me.pbxLightButtonBackground.Name = "pbxLightButtonBackground"
         Me.pbxLightButtonBackground.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightButtonBackground.TabIndex = 87
@@ -1078,7 +1083,7 @@ Partial Class Form1
         Me.pbxLightButtonText.BackColor = System.Drawing.Color.DimGray
         Me.pbxLightButtonText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxLightButtonText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxLightButtonText.Location = New System.Drawing.Point(755, 124)
+        Me.pbxLightButtonText.Location = New System.Drawing.Point(755, 155)
         Me.pbxLightButtonText.Name = "pbxLightButtonText"
         Me.pbxLightButtonText.Size = New System.Drawing.Size(66, 66)
         Me.pbxLightButtonText.TabIndex = 88
@@ -1089,7 +1094,7 @@ Partial Class Form1
         Me.pbxDarkButtonText.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkButtonText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkButtonText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkButtonText.Location = New System.Drawing.Point(755, 285)
+        Me.pbxDarkButtonText.Location = New System.Drawing.Point(755, 316)
         Me.pbxDarkButtonText.Name = "pbxDarkButtonText"
         Me.pbxDarkButtonText.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkButtonText.TabIndex = 89
@@ -1100,7 +1105,7 @@ Partial Class Form1
         Me.pbxDarkButtonBackground.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkButtonBackground.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkButtonBackground.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkButtonBackground.Location = New System.Drawing.Point(674, 285)
+        Me.pbxDarkButtonBackground.Location = New System.Drawing.Point(674, 316)
         Me.pbxDarkButtonBackground.Name = "pbxDarkButtonBackground"
         Me.pbxDarkButtonBackground.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkButtonBackground.TabIndex = 90
@@ -1111,7 +1116,7 @@ Partial Class Form1
         Me.pbxDarkSubtitleText.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkSubtitleText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkSubtitleText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkSubtitleText.Location = New System.Drawing.Point(592, 285)
+        Me.pbxDarkSubtitleText.Location = New System.Drawing.Point(592, 316)
         Me.pbxDarkSubtitleText.Name = "pbxDarkSubtitleText"
         Me.pbxDarkSubtitleText.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkSubtitleText.TabIndex = 91
@@ -1122,7 +1127,7 @@ Partial Class Form1
         Me.pbxDarkBodyText.BackColor = System.Drawing.Color.DimGray
         Me.pbxDarkBodyText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbxDarkBodyText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbxDarkBodyText.Location = New System.Drawing.Point(509, 285)
+        Me.pbxDarkBodyText.Location = New System.Drawing.Point(509, 316)
         Me.pbxDarkBodyText.Name = "pbxDarkBodyText"
         Me.pbxDarkBodyText.Size = New System.Drawing.Size(66, 66)
         Me.pbxDarkBodyText.TabIndex = 92
@@ -1132,7 +1137,7 @@ Partial Class Form1
         '
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(4, 85)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 116)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(824, 145)
         Me.GroupBox1.TabIndex = 93
@@ -1143,7 +1148,7 @@ Partial Class Form1
         '
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.GroupBox2.Location = New System.Drawing.Point(4, 245)
+        Me.GroupBox2.Location = New System.Drawing.Point(4, 276)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(824, 145)
         Me.GroupBox2.TabIndex = 94
@@ -1152,28 +1157,56 @@ Partial Class Form1
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.chkRGBA)
-        Me.GroupBox3.Controls.Add(Me.chkHEXA)
+        Me.GroupBox3.Controls.Add(Me.txtThemeDescription)
+        Me.GroupBox3.Controls.Add(Me.txtThemeSource)
         Me.GroupBox3.Controls.Add(Me.btnOpenJson)
         Me.GroupBox3.Controls.Add(Me.txtThemeName)
         Me.GroupBox3.Controls.Add(Me.txtThemeCreator)
         Me.GroupBox3.Controls.Add(Me.btnWriteJson)
-        Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.GroupBox3.Location = New System.Drawing.Point(4, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(824, 61)
+        Me.GroupBox3.Size = New System.Drawing.Size(664, 89)
         Me.GroupBox3.TabIndex = 95
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "File"
+        '
+        'txtThemeDescription
+        '
+        Me.txtThemeDescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.txtThemeDescription.Location = New System.Drawing.Point(286, 52)
+        Me.txtThemeDescription.MaxLength = 50
+        Me.txtThemeDescription.Name = "txtThemeDescription"
+        Me.txtThemeDescription.Size = New System.Drawing.Size(372, 22)
+        Me.txtThemeDescription.TabIndex = 51
+        Me.txtThemeDescription.Tag = ""
+        Me.txtThemeDescription.Text = "Description"
+        Me.txtThemeDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.txtThemeDescription, "A short description of your theme.")
+        Me.txtThemeDescription.WordWrap = False
+        '
+        'txtThemeSource
+        '
+        Me.txtThemeSource.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.txtThemeSource.Location = New System.Drawing.Point(286, 24)
+        Me.txtThemeSource.MaxLength = 50
+        Me.txtThemeSource.Name = "txtThemeSource"
+        Me.txtThemeSource.Size = New System.Drawing.Size(372, 22)
+        Me.txtThemeSource.TabIndex = 50
+        Me.txtThemeSource.Tag = ""
+        Me.txtThemeSource.Text = "Source"
+        Me.txtThemeSource.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.txtThemeSource, "The source for your theme inspiration. For example if you used Spotify color pale" &
+        "tte, the source would be ""https://spotify.com""")
+        Me.txtThemeSource.WordWrap = False
         '
         'chkRGBA
         '
         Me.chkRGBA.AutoSize = True
         Me.chkRGBA.Cursor = System.Windows.Forms.Cursors.Hand
         Me.chkRGBA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkRGBA.Location = New System.Drawing.Point(583, 28)
+        Me.chkRGBA.Location = New System.Drawing.Point(16, 28)
         Me.chkRGBA.Name = "chkRGBA"
         Me.chkRGBA.Size = New System.Drawing.Size(94, 17)
         Me.chkRGBA.TabIndex = 4
@@ -1186,7 +1219,7 @@ Partial Class Form1
         Me.chkHEXA.AutoSize = True
         Me.chkHEXA.Cursor = System.Windows.Forms.Cursors.Hand
         Me.chkHEXA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkHEXA.Location = New System.Drawing.Point(683, 28)
+        Me.chkHEXA.Location = New System.Drawing.Point(16, 56)
         Me.chkHEXA.Name = "chkHEXA"
         Me.chkHEXA.Size = New System.Drawing.Size(93, 17)
         Me.chkHEXA.TabIndex = 5
@@ -1194,22 +1227,26 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.chkHEXA, "Includes an extra file containing the HEXA values of your theme upon saving.")
         Me.chkHEXA.UseVisualStyleBackColor = True
         '
-        'Label1
+        'GroupBox4
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(581, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(107, 12)
-        Me.Label1.TabIndex = 49
-        Me.Label1.Text = "Optional Save Data:"
+        Me.GroupBox4.Controls.Add(Me.chkHEXA)
+        Me.GroupBox4.Controls.Add(Me.chkRGBA)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.GroupBox4.Location = New System.Drawing.Point(674, 12)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(154, 89)
+        Me.GroupBox4.TabIndex = 96
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Optional Save Data"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(833, 393)
+        Me.ClientSize = New System.Drawing.Size(833, 424)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.pbxDarkBodyText)
         Me.Controls.Add(Me.pbxDarkSubtitleText)
         Me.Controls.Add(Me.pbxDarkButtonBackground)
@@ -1342,6 +1379,8 @@ Partial Class Form1
         CType(Me.pbxDarkBodyText, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1436,6 +1475,8 @@ Partial Class Form1
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents chkRGBA As CheckBox
     Friend WithEvents chkHEXA As CheckBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents txtThemeDescription As TextBox
+    Friend WithEvents txtThemeSource As TextBox
+    Friend WithEvents GroupBox4 As GroupBox
 End Class
