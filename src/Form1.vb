@@ -1713,7 +1713,7 @@ Public Class Form1
 
             If latestVersion IsNot Nothing Then
                 ' Compare the latest version with a certain threshold
-                Dim thresholdVersion As Version = New Version("1.1") ' Update this to current version before building
+                Dim thresholdVersion As Version = New Version("1.1") ' Increment version before building
 
                 If latestVersion > thresholdVersion Then
                     Dim result As DialogResult = MessageBox.Show("New version available! Would you like to go to GitHub to download it?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Information)

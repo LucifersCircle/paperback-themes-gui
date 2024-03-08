@@ -610,7 +610,7 @@ Partial Class Form1
         '
         Me.txtThemeName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.txtThemeName.Location = New System.Drawing.Point(92, 24)
-        Me.txtThemeName.MaxLength = 50
+        Me.txtThemeName.MaxLength = 256
         Me.txtThemeName.Name = "txtThemeName"
         Me.txtThemeName.Size = New System.Drawing.Size(188, 22)
         Me.txtThemeName.TabIndex = 2
@@ -624,7 +624,7 @@ Partial Class Form1
         '
         Me.txtThemeCreator.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.txtThemeCreator.Location = New System.Drawing.Point(92, 52)
-        Me.txtThemeCreator.MaxLength = 50
+        Me.txtThemeCreator.MaxLength = 256
         Me.txtThemeCreator.Name = "txtThemeCreator"
         Me.txtThemeCreator.Size = New System.Drawing.Size(188, 22)
         Me.txtThemeCreator.TabIndex = 3
@@ -1176,7 +1176,7 @@ Partial Class Form1
         '
         Me.txtThemeDescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.txtThemeDescription.Location = New System.Drawing.Point(286, 52)
-        Me.txtThemeDescription.MaxLength = 50
+        Me.txtThemeDescription.MaxLength = 256
         Me.txtThemeDescription.Name = "txtThemeDescription"
         Me.txtThemeDescription.Size = New System.Drawing.Size(372, 22)
         Me.txtThemeDescription.TabIndex = 51
@@ -1190,7 +1190,7 @@ Partial Class Form1
         '
         Me.txtThemeSource.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.txtThemeSource.Location = New System.Drawing.Point(286, 24)
-        Me.txtThemeSource.MaxLength = 50
+        Me.txtThemeSource.MaxLength = 256
         Me.txtThemeSource.Name = "txtThemeSource"
         Me.txtThemeSource.Size = New System.Drawing.Size(372, 22)
         Me.txtThemeSource.TabIndex = 50
